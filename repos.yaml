@@ -1,15 +1,15 @@
 repositories:
   mushr_sim:
     type: git
-    url: https://github.com/prl-mushr/mushr_sim.git
+    url: https://github.com/rogeriobonatti/mushr_sim.git
     version: master
   mushr:
     type: git
-    url: https://github.com/prl-mushr/mushr.git
+    url: https://github.com/rogeriobonatti/mushr.git
     version: master
   mushr/mushr_base/mushr_base:
     type: git
-    url: https://github.com/prl-mushr/mushr_base.git
+    url: https://github.com/rogeriobonatti/mushr_base.git
     version: master
   mushr/mushr_base/vesc:
     type: git
@@ -23,3 +23,11 @@ repositories:
     type: git
     url: https://github.com/prl-mushr/range_libc
     version: python3
+  mushr_pf:
+    type: git
+    url: https://github.com/prl-mushr/mushr_pf.git
+    version: master
+  mushr_rhc:
+    type: git
+    url: https://github.com/rogeriobonatti/mushr_rhc.git
+    version: master
