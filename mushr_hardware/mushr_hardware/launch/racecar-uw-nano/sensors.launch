@@ -9,8 +9,20 @@
   <rosparam file="$(arg sensors_config)" command="load" />
 
   <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
-      args="10 realsense2_camera rs_camera.launch camera:=/$(arg car_name)/camera tf_prefix:=/$(arg car_name)/camera"
-      name="rs_camera_timed_roslaunch" output="screen" />
+      args="15 realsense2_camera rs_camera.launch camera:=/$(arg car_name)/camera_d465i tf_prefix:=/$(arg car_name)/camera_d465i"
+      name="rs_camera_d465i_timed_roslaunch" output="screen" />
+
+  <!-- <node name="republish_rgb" type="republish" pkg="image_transport" output="screen" args="raw in:=$(arg car_name)/camera_d465i/color/image_raw compressed out:=/$(arg car_name)/camera_d465i/color/image_comp" /> -->
+
+  <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+      args="10 realsense2_camera rs_t265.launch camera:=/$(arg car_name)/camera tf_prefix:=/$(arg car_name)/camera"
+      name="rs_camera_t265_timed_roslaunch" output="screen" />
+
+<!--   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_camera"
+    args="0 0 0   0.0 0.0 0.0 1.0 /$(arg car_name)/camera_link /$(arg car_name)/camera_odom_frame" />
+ -->
+<!--   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_camera"
+    args="0 0 0   0.0 0.0 0.0 1.0 /map /$(arg car_name)/camera_odom_frame" /> -->
     
   <include file="$(find ydlidar)/launch/lidar.launch" >
     <arg name="car_name" value="$(arg car_name)" />
